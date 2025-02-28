@@ -5,14 +5,17 @@ int main()
 {
     
     float T, Y;
-    double windchill;
     
     cout << "Please enter degrees in fahrenheit..." << endl;
     cin >> T;
     
     cout << "Now, please enter wind speed in mph..." << endl;
     cin >> Y;
-    
-   double windchill = 35.74 + ((0.6215 * T) - (35.75 * (pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
+   
+    double windchill = 35.74 + ((0.6215 * T) - (35.75*(pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
+   
+   cout << "The wind chill is " << windchill << " degrees fahrenheit" << endl;
     return 0;
 }
+
+    
