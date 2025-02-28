@@ -19,7 +19,7 @@ int main()
     
     double windchill = windchillcalc(T, Y);
    
-    cout << "The wind chill is " << windchill << " degrees fahrenheit" << endl;
+    cout << "The wind chill is " << windchill << " degrees fahrenheit." << endl;
     return 0;
 }
 
