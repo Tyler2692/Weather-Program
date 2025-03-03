@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-double windchillcalc(float T, float Y){ 
+double windchillcalc(float T, float Y){
     return 35.74 + ((0.6215 * T) - (35.75*(pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
 } // calculation for wind chill
 
@@ -16,7 +16,7 @@ int main()
     float T, Y; // T = temperature, Y = wind speed
     float d; // d = dew point
 
-    cout << "Please enter degrees in fahrenheit... ";
+    cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
 
     cout << "Now, please enter wind speed in mph... ";
@@ -29,9 +29,11 @@ int main()
 
     double cloudbase = cloudcalc(d, T);
 
-    cout << "The wind chill is " << windchill << " degrees fahrenheit." << "The cloud base is " << cloudbase << " degrees fahrenheit." << endl;
+    cout << "The wind chill is " << windchill << " degrees Fahrenheit." << "The cloud base is " << cloudbase << " feet." << endl;
 
     return 0;
 }
+
+
 
     
