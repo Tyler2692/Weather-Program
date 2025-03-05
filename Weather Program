@@ -16,6 +16,16 @@ int main()
     float T, Y; // T = temperature, Y = wind speed
     float d; // d = dew point
 
+    cout << "====================================" << endl
+         << "|                                  |" << endl
+         << "|  Welcome to the Weather Program  |" << endl
+         << "|                                  |" << endl
+         << "====================================" << endl;
+
+    cout << "press enter to continue..." << endl;
+
+    cin.ignore(); // allows user to press enter
+
     cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
 
@@ -25,15 +35,14 @@ int main()
     cout << "Now enter dew point... ";
     cin >> d;
 
-    double windchill = windchillcalc(T, Y);
+    double windchill = windchillcalc(T, Y); // adds function to code
 
-    double cloudbase = cloudcalc(d, T);
+    double cloudbase = cloudcalc(d, T); // adds function to code
 
     cout << "The wind chill is " << windchill << " degrees Fahrenheit." << "The cloud base is " << cloudbase << " feet." << endl;
 
     return 0;
 }
-
 
 
     
