@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <cstdlib>
 using namespace std;
 
 double windchillcalc(float T, float Y){
@@ -16,9 +17,18 @@ int main()
     float T, Y; // T = temperature, Y = wind speed
     float d; // d = dew point
 
-    cout << "====================================" << endl
+    cout << ". . .          |    |                  ,---.                              " << endl
+         << "| | |,---.,---.|--- |---.,---.,---.    |---',---.,---.,---.,---.,---.,-.-." << endl
+         << "| | ||---',---||    |   ||---'|        |    |    |   ||   ||    ,---|| | |" << endl
+         << "`-'-'`---'`---^`---'`   '`---'`        `    `    `---'`---|`    `---^` ' '" << endl
+         << "                                                      `---'               " << endl;
+
+    cout << "|==================================|" << endl
          << "|                                  |" << endl
-         << "|  Welcome to the Weather Program  |" << endl
+         << "|    this program allows you to    |" << endl
+         << "|  calculate the wind chill and    |" << endl
+         << "|  cloud base using temperature,   |" << endl
+         << "|  wind speed, and dew point.      |" << endl
          << "|                                  |" << endl
          << "====================================" << endl;
 
@@ -39,7 +49,8 @@ int main()
 
     double cloudbase = cloudcalc(d, T); // adds function to code
 
-    cout << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
+    cout << " " << endl
+         << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
          << "----------------------------------------------------------------" << endl
          << T << "        | " << Y << " mph    | " << d << " F      | "
          << windchill << " F    | " << cloudbase << " feet " << endl;
