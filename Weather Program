@@ -10,28 +10,24 @@ double windchillcalc(float T, float Y){
 double cloudcalc(float d, float T){
     return ((T - d) / 4.4) * 1000;
  } // calculation for cloud base
- 
+
 void userinandout(){
-    
+
     float T, Y, d;
-    
+
     cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
-    if (cin.fail()) {
-        exit(EXIT_FAILURE);
-    } // ends program if input isn't a number
+     if (cin.fail()){
+          cin.clear();
+     cin.ignore(10000, '\n');
+     cout << "enter a number" << endl;
+     }
 
     cout << "Now, please enter wind speed in mph... ";
     cin >> Y;
-    if (cin.fail()) {
-        exit(EXIT_FAILURE);
-    } // ends program if input isn't a number
 
     cout << "Now enter dew point... ";
     cin >> d;
-    if (cin.fail()) {
-        exit(EXIT_FAILURE);
-    } // ends program if input isn't a number
 
     double windchill = windchillcalc(T, Y); // adds function to code
 
@@ -56,7 +52,7 @@ int main()
 
     cout << "====================================" << endl
          << "|                                  |" << endl
-         << "|    this program allows you to    |" << endl
+         << "|    This program allows you to    |" << endl
          << "|  calculate the wind chill and    |" << endl
          << "|  cloud base using temperature,   |" << endl
          << "|  wind speed, and dew point.      |" << endl
@@ -66,7 +62,7 @@ int main()
     cout << "press enter to continue..." << endl;
 
     cin.ignore(); // makes user to press enter
-    
+
     userinandout();
 
     return 0;
