@@ -19,19 +19,19 @@ void userinandout(){
     cin >> T;
     if (cin.fail()) {
         exit(EXIT_FAILURE);
-    }
+    } // ends program if input isn't a number
 
     cout << "Now, please enter wind speed in mph... ";
     cin >> Y;
     if (cin.fail()) {
         exit(EXIT_FAILURE);
-    }
+    } // ends program if input isn't a number
 
     cout << "Now enter dew point... ";
     cin >> d;
     if (cin.fail()) {
         exit(EXIT_FAILURE);
-    }
+    } // ends program if input isn't a number
 
     double windchill = windchillcalc(T, Y); // adds function to code
 
