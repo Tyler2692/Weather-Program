@@ -17,12 +17,21 @@ void userinandout(){
     
     cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
+    if (cin.fail()) {
+        exit(EXIT_FAILURE);
+    }
 
     cout << "Now, please enter wind speed in mph... ";
     cin >> Y;
+    if (cin.fail()) {
+        exit(EXIT_FAILURE);
+    }
 
     cout << "Now enter dew point... ";
     cin >> d;
+    if (cin.fail()) {
+        exit(EXIT_FAILURE);
+    }
 
     double windchill = windchillcalc(T, Y); // adds function to code
 
