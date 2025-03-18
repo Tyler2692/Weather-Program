@@ -10,12 +10,34 @@ double windchillcalc(float T, float Y){
 double cloudcalc(float d, float T){
     return ((T - d) / 4.4) * 1000;
  } // calculation for cloud base
+ 
+void userinandout(){
+    
+    float T, Y, d;
+    
+    cout << "Please enter degrees in Fahrenheit... ";
+    cin >> T;
+
+    cout << "Now, please enter wind speed in mph... ";
+    cin >> Y;
+
+    cout << "Now enter dew point... ";
+    cin >> d;
+
+    double windchill = windchillcalc(T, Y); // adds function to code
+
+    double cloudbase = cloudcalc(d, T); // adds function to code
+
+    cout << " " << endl
+         << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
+         << "----------------------------------------------------------------" << endl
+         << T << "        | " << Y << " mph    | " << d << " F      | "
+         << windchill << " F    | " << cloudbase << " feet " << endl;
+}
 
 int main()
 {
 
-    float T, Y; // T = temperature, Y = wind speed
-    float d; // d = dew point
 
     cout << ". . .          |    |                  ,---.                              " << endl
          << "| | |,---.,---.|--- |---.,---.,---.    |---',---.,---.,---.,---.,---.,-.-." << endl
@@ -35,31 +57,8 @@ int main()
     cout << "press enter to continue..." << endl;
 
     cin.ignore(); // allows user to press enter
-
-    cout << "Please enter degrees in Fahrenheit... ";
-    cin >> T;
-
-    cout << "Now, please enter wind speed in mph... ";
-    cin >> Y;
-
-    cout << "Now enter dew point... ";
-    cin >> d;
-
-    double windchill = windchillcalc(T, Y); // adds function to code
-
-    double cloudbase = cloudcalc(d, T); // adds function to code
-
-    cout << " " << endl
-         << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
-         << "----------------------------------------------------------------" << endl
-         << T << "        | " << Y << " mph    | " << d << " F      | "
-         << windchill << " F    | " << cloudbase << " feet " << endl;
+    
+    userinandout();
 
     return 0;
 }
-
-
-
-
-
-    
