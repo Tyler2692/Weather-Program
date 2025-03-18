@@ -65,7 +65,7 @@ int main()
 
     cout << "press enter to continue..." << endl;
 
-    cin.ignore(); // allows user to press enter
+    cin.ignore(); // makes user to press enter
     
     userinandout();
 
