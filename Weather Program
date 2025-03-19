@@ -3,25 +3,18 @@
 #include <cstdlib>
 using namespace std;
 
-double windchillcalc(float T, float Y){
+double windchillcalc(double T, double Y){
     return 35.74 + ((0.6215 * T) - (35.75*(pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
 } // calculation for wind chill
 
-double cloudcalc(float d, float T){
+double cloudcalc(double d, double T){
     return ((T - d) / 4.4) * 1000;
  } // calculation for cloud base
 
-void userinandout(){
-
-    float T, Y, d;
+void userinput(double &T, double &Y, double &d){
 
     cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
-     if (cin.fail()){
-          cin.clear();
-     cin.ignore(10000, '\n');
-     cout << "enter a number" << endl;
-     }
 
     cout << "Now, please enter wind speed in mph... ";
     cin >> Y;
@@ -29,9 +22,9 @@ void userinandout(){
     cout << "Now enter dew point... ";
     cin >> d;
 
-    double windchill = windchillcalc(T, Y); // adds function to code
+}
 
-    double cloudbase = cloudcalc(d, T); // adds function to code
+void output(double T, double Y, double d, double windchill, double cloudbase){
 
     cout << " " << endl
          << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
@@ -39,7 +32,7 @@ void userinandout(){
          << T << "        | " << Y << " mph    | " << d << " F      | "
          << windchill << " F    | " << cloudbase << " feet " << endl;
 }
-
+// adds function to code
 int main()
 {
 
@@ -63,7 +56,15 @@ int main()
 
     cin.ignore(); // makes user to press enter
 
-    userinandout();
+    double T, Y, d;
+
+    userinput (T, Y, d); // adds function to code
+
+    double windchill = windchillcalc(T, Y); // adds function to code
+
+    double cloudbase = cloudcalc(d, T); // adds function to code
+
+    output(T, Y, d, windchill, cloudbase); // adds function to code
 
     return 0;
 }
