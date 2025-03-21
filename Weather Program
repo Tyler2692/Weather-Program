@@ -20,7 +20,7 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
         } // if input is not invalid then it breaks
@@ -32,7 +32,7 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
         } // if input is not invalid then it breaks
@@ -44,7 +44,7 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
         } // if input is not invalid then it breaks
@@ -57,7 +57,7 @@ void output(double T, double Y, double d, double windchill, double cloudbase){
          << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
          << "----------------------------------------------------------------" << endl
          << T << "        | " << Y << " mph    | " << d << " F      | "
-         << windchill << " F    | " << cloudbase << " feet " << endl;
+         << windchill << " F    | " << cloudbase << " feet " << endl; // output for temp, winds speed, dew point, wind chill, and cloudbase
 }
 
 int main()
