@@ -4,6 +4,16 @@
 #include <limits>
 using namespace std;
 
+
+double windchillcalc(double T, double Y);
+
+double cloudcalc(double d, double T);
+
+void user_input(double &T, double &Y, double &d);
+
+void output_graph (double T, double Y, double d, double windchill, double cloudbase);
+
+
 double windchillcalc(double T, double Y){
     return 35.74 + ((0.6215 * T) - (35.75*(pow(Y, 0.16)))) + (0.4275 * T * (pow(Y, 0.16)));
 } // calculation for wind chill
@@ -12,7 +22,7 @@ double cloudcalc(double d, double T){
     return ((T - d) / 4.4) * 1000;
  } // calculation for cloud base
 
-void userinput(double &T, double &Y, double &d){
+void user_input(double &T, double &Y, double &d){
 
      while (true) {
     cout << "Please enter degrees in Fahrenheit... ";
@@ -20,10 +30,10 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks the loop
+        } // if input is not invalid then it breaks
     }
 
     while (true) {
@@ -32,10 +42,10 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks the loop
+        } // if input is not invalid then it breaks
     }
 
     while (true) {
@@ -44,20 +54,20 @@ void userinput(double &T, double &Y, double &d){
     if (cin.fail()) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
+            cout << "Invalid input." << endl; // checks if input is invalid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks the loop
+        } // if input is not invalid then it breaks
     }
 }
 
-void output(double T, double Y, double d, double windchill, double cloudbase){
+void output_graph(double T, double Y, double d, double windchill, double cloudbase){
 
     cout << " " << endl
          << " Temperature | Wind speed | Dew point | Wind chill | Cloud Base " << endl
          << "----------------------------------------------------------------" << endl
          << T << "        | " << Y << " mph    | " << d << " F      | "
-         << windchill << " F    | " << cloudbase << " feet " << endl; // output for temp, winds speed, dew point, wind chill, and cloudbase
+         << windchill << " F    | " << cloudbase << " feet " << endl;
 }
 
 int main()
@@ -85,13 +95,13 @@ int main()
 
     double T, Y, d;
 
-    userinput (T, Y, d); // adds function to code
+    user_input (T, Y, d); // adds function to code
 
     double windchill = windchillcalc(T, Y); // adds function to code
 
     double cloudbase = cloudcalc(d, T); // adds function to code
 
-    output(T, Y, d, windchill, cloudbase); // adds function to code
+    output_graph (T, Y, d, windchill, cloudbase); // adds function to code
 
     return 0;
 }
