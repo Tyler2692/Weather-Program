@@ -23,7 +23,7 @@ void userinput(double &T, double &Y, double &d){
             cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks
+        } // if input is not invalid then it breaks the loop
     }
 
     while (true) {
@@ -35,7 +35,7 @@ void userinput(double &T, double &Y, double &d){
             cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks
+        } // if input is not invalid then it breaks the loop
     }
 
     while (true) {
@@ -47,7 +47,7 @@ void userinput(double &T, double &Y, double &d){
             cout << "Invalid input." << endl; // checks if input is valid, if it is invalid it loops
         } else {
             break;
-        } // if input is not invalid then it breaks
+        } // if input is not invalid then it breaks the loop
     }
 }
 
