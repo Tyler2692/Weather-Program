@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <limits>
 using namespace std;
 
 double windchillcalc(double T, double Y){
@@ -13,15 +14,41 @@ double cloudcalc(double d, double T){
 
 void userinput(double &T, double &Y, double &d){
 
+     while (true) {
     cout << "Please enter degrees in Fahrenheit... ";
     cin >> T;
+    if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a valid number for temperature." << endl; // checks if input is invalid, if it is invalid it loops
+        } else {
+            break;
+        } // if input is not invalid then it breaks
+    }
 
+    while (true) {
     cout << "Now, please enter wind speed in mph... ";
     cin >> Y;
+    if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a valid number for temperature." << endl; // checks if input is invalid, if it is invalid it loops
+        } else {
+            break;
+        } // if input is not invalid then it breaks
+    }
 
+    while (true) {
     cout << "Now enter dew point... ";
     cin >> d;
-
+    if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter a valid number for temperature." << endl; // checks if input is invalid, if it is invalid it loops
+        } else {
+            break;
+        } // if input is not invalid then it breaks
+    }
 }
 
 void output(double T, double Y, double d, double windchill, double cloudbase){
@@ -32,7 +59,7 @@ void output(double T, double Y, double d, double windchill, double cloudbase){
          << T << "        | " << Y << " mph    | " << d << " F      | "
          << windchill << " F    | " << cloudbase << " feet " << endl;
 }
-// adds function to code
+
 int main()
 {
 
